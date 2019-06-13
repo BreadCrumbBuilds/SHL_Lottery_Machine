@@ -40,13 +40,13 @@ def Lottery():
 
 
 # Run the lottery 1,000,000 times to verify that it isn't biased
-def LotteryTest():
-    tester = 0
+def LotteryTest(numberOfTests):
+    test = 0
     first = 0
     second = 0
     third = 0
     fourth = 0
-    while tester < 1000000:
+    while test < numberOfTests:
         winner = Lottery()
         if winner == 0:
             first += 1
@@ -107,7 +107,7 @@ for team in League:
 
 print("\nLottery Testing")
 
-LotteryTest()
+LotteryTest(1000000)
 
 """
 Now we have the teams in a data structure, so we need to be able to 'pull out'
