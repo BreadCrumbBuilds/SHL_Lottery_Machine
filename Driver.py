@@ -8,8 +8,12 @@ Created on Wed Jun 12 19:01:48 2019
 
 TODO:
     
-    Need to write out each lottery pool into a file, and the winning seed as well
-    so we can read that file in reverse for a more dramatic reveal
+    ø Need to write out each lottery pool into a file, and the winning 
+    seed as well so we can read that file in reverse for a more 
+    dramatic reveal
+    ø Remove all the sleeps
+    ø Format the testing 
+    ø Modularize classes: Lottery
 """
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Section 1
@@ -20,6 +24,8 @@ pay attention
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 from random import randint
 
+# First gets numbers 1 - 50 (50%), second 51 - 75 (25%),
+# third 76 - 90 (15%), fourth 91 - 100 (10%)
 def Lottery():
     winner = randint(1, 100)
     
@@ -33,7 +39,7 @@ def Lottery():
         return 3
 
 
-
+# Run the lottery 1,000,000 times to verify that it isn't biased
 def LotteryTest():
     tester = 0
     first = 0
@@ -76,95 +82,106 @@ LotteryResults = []
 
 # Now add teams to the league
 for line in StandingsFile:
-    line = line.strip() # Clean up the end of each line
-    name, standing = line.split(":") # Split the name and the standing
     
-    standing = standing.replace(" ", "") # Get rid of all the whitespace
-    team = [name, int(standing)]
+    # Clean up the end of each line by taking away the extra newline character
+    line = line.strip() 
+    
+    # Split the name and the standing apart
+    name, standing = line.split(":")
+    
+    # Get rid of all the whitespace
+    standing = standing.replace(" ", "") 
+
+    # a single team has a name and a standing
+    team = [name, int(standing)] 
     League.append(team)
 
 ### NEEDS TO BE FORMATTED
-time.sleep(.25)
+
 print("The Selfish Hockey League")
 print("-------------------------")
+
 for team in League:
-    time.sleep(.25)
     print("Owner: ", team[0], "Standing: ", team[1])
 
-time.sleep(3)
+
 print("\nLottery Testing")
-time.sleep(2)
+
 LotteryTest()
-time.sleep(5)
+
 """
 Now we have the teams in a data structure, so we need to be able to 'pull out'
 four teams into their own structure which represents the current lottery pool.
 """
+
+
 count = 1
-while len(League) > 3:
-    time.sleep(1)
+while len(League) > 3: # do this over and over again until there are only 3 teams left
+
     print("\nRound ", count)
     print("----------")
-    time.sleep(1)
+
     LotteryPool = []
     
     firstSeed = League[ (len(League) - 1)] # Gives the worst possible team as the high seed
     print("\nFirst Seed: ",firstSeed)
-    time.sleep(.5)
-    # Check if this team has shit the bed on every lottery.
+ 
+    # Check if this team has shit the bed on every lottery so far
     # We do this by comparing the size of the league to the standing of that team
     # The size of the league shrinks by one with every pass through the lottery,
-    # so if the standing of the team - 3 is ever larger than the amount of teams
-    # remaining, it means that that team has fallen four spots and so they
+    # so if the standing of team - 3 is ever larger than the amount of teams
+    # remaining, that team has fallen the maximum four spots, so they
     # automatically win this round
     
     if (int)(firstSeed[1] - 3) >= len(League):
         #print(League[(len(League)-1)]
         LotteryResults.append(League.pop(len(League)-1)) # take out the team and put it in the Winner
         print("LOSER\n")
+        count+=1
         continue # if this was true, start the loop over
 
     # otherwise get the rest of the teams and do the damn lottery
     
     secondSeed = League[len(League) - 2]
     print("Second Seed: ",secondSeed)
-    time.sleep(.5)
     
     thirdSeed = League[len(League) - 3]
     print("Third Seed: ",thirdSeed)
-    time.sleep(.5)
     
     fourthSeed = League[len(League) - 4]
     print("Fourth Seed: ",fourthSeed)
-    time.sleep(.5)
-    
+
+    # Put all the teams together in the pool
     LotteryPool = firstSeed, secondSeed, thirdSeed, fourthSeed
     
+    # Find winner
     winner = Lottery()
+    
+    # Get the winning team
     winningSeed = LotteryPool[winner]
     
-    time.sleep(3)
     print("\nWinning Seed ", winningSeed)
-    #print("Index ", League.index(winningSeed))
+
+    # Get the index of the winner in the League list (different list than the pool)
     index = League.index(winningSeed)
+    
+    # Take the winner out of the League list, and put him in the Results list
     LotteryResults.append(League.pop(index))
-    time.sleep(5)
-    i = 0
-    while i < 3:
-        time.sleep(1)
-        print(".")
-        i += 1
+    
     count += 1
-# Three teams left, pop them off one by one
+
+# Three teams left
 while len(League) > 0:
+    
+    # Take them out of the League list in order, put them in results
     LotteryResults.append(League.pop())
 
-
+count = 1
 print("\n\nRESULTS\n---------")
 for team in LotteryResults:
-    print("Team: ", team[0], "\nStanding: ", team[1])
-#print(LotteryResults)
-#print(len(LotteryResults))
+    print("#", count, team[0], " ", team[1])
+    count += 1
+
 
 LotteryStandingsFile    = open('LotteryStandings.txt', 'w')
 StandingsFile.close()
