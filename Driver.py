@@ -56,7 +56,7 @@ def LotteryTest(numberOfTests):
             third += 1
         else:
             fourth += 1
-        tester += 1
+        test += 1
     print("First: ", first)
     print("Second: ", second)
     print("Third: ", third)
