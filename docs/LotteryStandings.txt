@@ -1,0 +1,18 @@
+
+
+RESULTS
+---------
+#1 Deepak	Seed: 13
+#2 Corbin and Kyle	Seed: 12
+#3 Rup and Gagan	Seed: 14
+#4 Darcy	Seed: 11
+#5 Blair	Seed: 10
+#6 Brandon and Andrew	Seed: 9
+#7 Darren	Seed: 8
+#8 Skylar	Seed: 7
+#9 Dave	Seed: 6
+#10 Cole and Randy	Seed: 5
+#11 Brock and Chel	Seed: 4
+#12 Tim	Seed: 3
+#13 Kyle	Seed: 2
+#14 Brad	Seed: 1

@@ -2,17 +2,19 @@
 
 RESULTS
 ---------
-#1 Deepak	Seed: 13
-#2 Corbin and Kyle	Seed: 12
-#3 Rup and Gagan	Seed: 14
-#4 Darcy	Seed: 11
-#5 Blair	Seed: 10
-#6 Brandon and Andrew	Seed: 9
-#7 Darren	Seed: 8
-#8 Skylar	Seed: 7
-#9 Dave	Seed: 6
-#10 Cole and Randy	Seed: 5
-#11 Brock and Chel	Seed: 4
-#12 Tim	Seed: 3
-#13 Kyle	Seed: 2
-#14 Brad	Seed: 1
+          Team          Seed
+---------------------------------------
+#1  | Rup and Gagan       | 14   
+#2  | Deepak              | 13   
+#3  | Blair               | 10   
+#4  | Brandon and Andrew  | 9    
+#5  | Darcy               | 11   
+#6  | Corbin and Kyle     | 12   
+#7  | Skylar              | 7    
+#8  | Darren              | 8    
+#9  | Dave                | 6    
+#10 | Brock and Chel      | 4    
+#11 | Tim                 | 3    
+#12 | Cole and Randy      | 5    
+#13 | Kyle                | 2    
+#14 | Brad                | 1    

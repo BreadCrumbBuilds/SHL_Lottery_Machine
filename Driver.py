@@ -23,9 +23,9 @@ Section 1 - Make files to write to
 """
 ########################################################################
 # Files to read and write
-StandingsFile           = open('TeamStandings.txt', 'r')
-ResultsLog              = open('LotteryResults.txt', 'w')
-LottoTestLog            = open('TestLog.txt', 'w')
+StandingsFile           = open('./docs/TeamStandings.txt', 'r')
+ResultsLog              = open('./docs/LotteryResults.txt', 'w')
+LottoTestLog            = open('./docs/TestLog.txt', 'w')
 # End of section 1
 
 """
@@ -158,9 +158,15 @@ LotteryStandingsFile    = open('LotteryStandings.txt', 'w')
 
 LotteryStandingsFile.write("\n\nRESULTS\n---------\n")
 
+header = '{:^24}'.format("Team") + '{:>5}'.format("Seed\n")
+header+= "---------------------------------------\n"
+LotteryStandingsFile.write(header)
+
 for team in LotteryResults:
 
-    LotteryStandingsFile.write("#" + str(count) + " " + str(team[0]) + "\tSeed: " + str(team[1]) + "\n")
+    LotteryStandingsFile.write('{:<4}'.format("#" + (str(count))) + '| ' +  
+                               '{:<20}'.format(str(team[0])) + "| "
+                               '{:<5}'.format(str(team[1])) + "\n")
     count += 1
 
 StandingsFile.close()
