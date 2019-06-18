@@ -1,12 +1,72 @@
 Round 1*
-1- Rup and Gagan: 14Round 2*
-1- Deepak: 13Round 3*
-1- Corbin and Kyle: 12Round 4*
-1- Corbin and Kyle: 12Round 5*
-1- Corbin and Kyle: 12Round 6*
-1- Corbin and Kyle: 12Round 7*
-1- Darren: 8Round 8*
-1- Darren: 8Round 9*
-1- Dave: 6Round 10*
-1- Cole and Randy: 5Round 11*
-1- Cole and Randy: 5
+1- Rup and Gagan: 14
+2- Deepak: 13
+3- Corbin and Kyle: 12
+4- Darcy: 11
+W- Rup and Gagan: 14
+Round 2*
+1- Deepak: 13
+2- Corbin and Kyle: 12
+3- Darcy: 11
+4- Blair: 10
+W- Deepak: 13
+Round 3*
+1- Corbin and Kyle: 12
+2- Darcy: 11
+3- Blair: 10
+4- Brandon and Andrew: 9
+W- Corbin and Kyle: 12
+Round 4*
+1- Darcy: 11
+2- Blair: 10
+3- Brandon and Andrew: 9
+4- Darren: 8
+W- Darcy: 11
+Round 5*
+1- Blair: 10
+2- Brandon and Andrew: 9
+3- Darren: 8
+4- Skylar: 7
+W- Brandon and Andrew: 9
+Round 6*
+1- Blair: 10
+2- Darren: 8
+3- Skylar: 7
+4- Dave: 6
+W- Blair: 10
+Round 7*
+1- Darren: 8
+2- Skylar: 7
+3- Dave: 6
+4- Cole and Randy: 5
+W- Cole and Randy: 5
+Round 8*
+1- Darren: 8
+2- Skylar: 7
+3- Dave: 6
+4- Brock and Chel: 4
+W- Skylar: 7
+Round 9*
+1- Darren: 8
+2- Dave: 6
+3- Brock and Chel: 4
+4- Tim: 3
+W- Darren: 8
+Round 10*
+1- Dave: 6
+2- Brock and Chel: 4
+3- Tim: 3
+4- Kyle: 2
+W- Brock and Chel: 4
+Round 11*
+1- Dave: 6
+2- Tim: 3
+3- Kyle: 2
+4- Brad: 1
+W- Dave: 6
+Round 12*
+L- Tim: 3
+Round 13*
+L- Kyle: 2
+Round 14*
+L- Brad: 1
