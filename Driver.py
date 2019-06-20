@@ -5,15 +5,11 @@ Created on Wed Jun 12 19:01:48 2019
 
 @author: BradleyCrump
 
-
+Finished:
+	Read and write the results.
 TODO:
-    
-    ø Need to write out each lottery pool into a file, and the winning 
-    seed as well so we can read that file in reverse for a more 
-    dramatic reveal
-    ø Remove all the sleeps
-    ø Format the testing 
-    ø Modularize classes: Lottery
+	Read back the results in reverse order.
+	Make firebase web application
 """
 import Lottery as lotto
 import Util as util
@@ -39,27 +35,30 @@ League = []
 LeagueCopy = []
 LotteryResults = []
 
-# Make the League
+# Make the League by pulling the text out of Standings.txt
 for line in StandingsFile:
+# for is used to loop through something. In this case, we 
+# are looping through each line of the Standings file. 
+# Each line, we execute the following instructions
     line = line.strip()                     # gets rid of new line characters
     name, standing = line.split(":")        # divides the line into two by :
     standing = standing.replace(" ", "")    # gets rid of extra spaces
     team = [name, int(standing)]            # make a team
     League.append(team)                     # put the team in the league
 
-LeagueCopy= League.copy()
+LeagueCopy= League.copy() 		    # to be used when reading results back
 
 header = ("{0:^20}".format("Owner") + "{:<23}".format("Standing"))
 print("\nThe Selfish Hockey League 2019 Standings")
 print("-----------------------------------------")
 print(header)
 
-for team in League:
+for team in League: 	# show the league
     print('{:<20}'.format(team[0]), '{:^5}'.format(team[1]))
 
 # End of section 2
 
-"""
+""" comment out for now to speed up testing
 Section 3 - Test the Lottery
 
 ########################################################################
@@ -98,7 +97,6 @@ while len(League) > 3:  # run until only three teams left
     ResultsLog.write(header)
     print(header)
     
-### FORMATTED UNTIL HERE
     # Get the first seed from the league
     firstSeed = League[ (len(League) - 1)]
     firstString = "1- " + firstSeed[0] + ": " + str(firstSeed[1]) + "\n"
@@ -107,7 +105,8 @@ while len(League) > 3:  # run until only three teams left
     print(firstString)
  
     # Check if this team has shit the bed on every lottery so far
-    # We do this by comparing the size of the league to the standing of that team
+    # We do this by comparing the size of the league (how many teams 
+    # are left) to the standing of that team.
     # The size of the league shrinks by one with every pass through the lottery,
     # so if the standing of team - 3 is ever larger than the amount of teams
     # remaining, that team has fallen the maximum four spots, so they
@@ -122,7 +121,6 @@ while len(League) > 3:  # run until only three teams left
     
     secondSeed = League[len(League) - 2]
     secondString = "2- " + secondSeed[0] + ": " + str(secondSeed[1]) + "\n"
-    
     ResultsLog.write(secondString)
     print(secondString)
     
@@ -133,7 +131,6 @@ while len(League) > 3:  # run until only three teams left
     
     fourthSeed = League[len(League) - 4]
     fourthString =  "4- " + fourthSeed[0] + ": " + str(fourthSeed[1]) + "\n"
-    
     ResultsLog.write(fourthString)
     print(fourthString)
 
@@ -146,9 +143,6 @@ while len(League) > 3:  # run until only three teams left
     # Get the winning team
     winningSeed = LotteryPool[winner]
     winningString =  "W- " + winningSeed[0] + ": " + str(winningSeed[1]) + "\n"
-    
-    ## decipher how much they 'won'
-    
     ResultsLog.write(winningString)
     print(winningString)
 
@@ -176,7 +170,6 @@ while len(League) > 0:
     print(teamString)
     
     count += 1
-
 
 count = 1
 
