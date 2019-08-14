@@ -3,7 +3,9 @@ results = open("./docs/LotteryResults.txt", 'r')
 
 
 def run():
-
+    util.waitNoDot(3)
+    print("Best of luck to all you chumps")
+    util.waitNoDot(3)
     rawInfo = []
     for line in results:
         rawInfo.append(line)
@@ -21,7 +23,9 @@ def run():
             print("\n\nDrafting...")
             util.waitNoDot(10)
             print("\n********************************")
-            print("Round " + str(round) + "\n" + line[2:])
+            print("Round " + str(round))
+            util.waitNoDot(3)
+            print(line[2:])
             util.waitNoDot(3)
             print("\nResults So Far:\n")
             i = 14
@@ -37,7 +41,9 @@ def run():
             print("\n\nDrafting...")
             util.waitNoDot(10)
             print("\n********************************")
-            print("Round " + str(round) + "\n" + line[2:])
+            print("Round " + str(round))
+            util.waitNoDot(3)
+            print(line[2:])
             util.waitNoDot(3)
             print("\nResults So Far:\n")
             i = 14
