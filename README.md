@@ -1,7 +1,7 @@
-HI there! Every summer, 18 of my close childhood friends and I get together to conduct a fantasy hockey draft. The goal of the draft is to acquire players that are not owned in our leageu via a lottery based draft. This application provides the logic for conducting the lottery.
+HI there! Every summer, 18 of my close childhood friends and I get together to conduct a fantasy hockey draft. The goal of the draft is to acquire players that are not owned in our league via a lottery based draft. This application provides the logic for conducting the lottery.
 
 The Digs:
-We do 11 round of lottery, with 4 teams entering each round. The worst teams get better odds, increasing the likelihood that they get a better drafting position, and in theory, a higher quality player. Odds follow:
+We do 11 rounds of lottery, with 4 teams entering each round. The worst teams get better odds, increasing the likelihood that they get a better drafting position, and in theory, a higher quality player. Odds follow:
 
 Worst Seed: 50%
 Second Worst: 25%
