@@ -13,16 +13,16 @@ TODO:
 """
 import Lottery as lotto
 import Util as util
-
+import DisplayResults as displayResults
 """
 Section 1 - Make files to write to
 """
 ########################################################################
 # Files to read and write
-StandingsFile           = open('./docs/TeamStandings.txt', 'r')
-LotteryStandingsFile    = open('./docs/LotteryStandings.txt', 'w')
-ResultsLog              = open('./docs/LotteryResults.txt', 'w')
-LottoTestLog            = open('./docs/TestLog.txt', 'w')
+StandingsFile = open('./docs/TeamStandings.txt', 'r')
+LotteryStandingsFile = open('./docs/LotteryStandings.txt', 'w')
+ResultsLog = open('./docs/LotteryResults.txt', 'w')
+LottoTestLog = open('./docs/TestLog.txt', 'w')
 # End of section 1
 
 """
@@ -37,18 +37,20 @@ LotteryResults = []
 
 # Make the League by pulling the text out of Standings.txt
 for line in StandingsFile:
-# for is used to loop through something. In this case, we 
-# are looping through each line of the Standings file. 
-# Each line, we execute the following instructions
+    # for is used to loop through something. In this case, we
+    # are looping through each line of the Standings file.
+    # Each line, we execute the following instructions
     line = line.strip()                     # gets rid of new line characters
     name, standing = line.split(":")        # divides the line into two by :
     standing = standing.replace(" ", "")    # gets rid of extra spaces
     team = [name, int(standing)]            # make a team
     League.append(team)                     # put the team in the league
 
-LeagueCopy= League.copy() 		    # to be used when reading results back
+LeagueCopy = League.copy() 		    # to be used when reading results back
 
 header = ("{0:^20}".format("Owner") + "{:<23}".format("Standing"))
+print("\n\n\nWelcome to the Selfish Hockey League Draft Lottery!!!")
+util.waitNoDot(3)
 print("\nThe Selfish Hockey League 2019 Standings")
 print("-----------------------------------------")
 print(header)
@@ -58,24 +60,24 @@ for team in League: 	# show the league
 
 # End of section 2
 
-""" comment out for now to speed up testing
-Section 3 - Test the Lottery
+# Section 3 - Test the Lottery
 
 ########################################################################
-print("\nLottery Testing")
+util.waitNoDot(10)
+print("\nLottery Testing 1,000,000 Draws")
 
-LottoTestLog.write("\nLOTTERY TESTING\n")
+LottoTestLog.write("\nLOTTERY TESTING 1,000,000 DRAWs\n")
 
 # Do five tests of the lottery
 
 i = 0
-while i < 5:  
+while i < 5:
     string = lotto.LotteryTest(1000000)
     LottoTestLog.write(string)
     print(string)
-    #util.wait(3)
+    util.wait(3)
     i += 1
-"""
+
 # End of section 3
 
 """
@@ -91,84 +93,87 @@ while len(League) > 3:  # run until only three teams left
 
     # Initialize temporary list to store each round of lottery
     LotteryPool = []
-    
+
     # Make and write header
     header = "Round " + str(count) + "*\n"
     ResultsLog.write(header)
-    print(header)
-    
+    # print(header)
+
     # Get the first seed from the league
-    firstSeed = League[ (len(League) - 1)]
+    firstSeed = League[(len(League) - 1)]
     firstString = "1- " + firstSeed[0] + ": " + str(firstSeed[1]) + "\n"
-   
+
     ResultsLog.write(firstString)
-    print(firstString)
- 
+    # print(firstString)
+
     # Check if this team has shit the bed on every lottery so far
-    # We do this by comparing the size of the league (how many teams 
+    # We do this by comparing the size of the league (how many teams
     # are left) to the standing of that team.
     # The size of the league shrinks by one with every pass through the lottery,
     # so if the standing of team - 3 is ever larger than the amount of teams
     # remaining, that team has fallen the maximum four spots, so they
     # automatically win this round
-    
+
     if (int)(firstSeed[1] - 3) >= len(League):
-        LotteryResults.append(League.pop(len(League)-1)) # take out the team and put it in the Winner
-        count+=1
-        continue # if this was true, start the loop over
+        # take out the team and put it in the Winner
+        LotteryResults.append(League.pop(len(League)-1))
+        firstString = "L- " + firstSeed[0] + ": " + str(firstSeed[1]) + "\n"
+        ResultsLog.write(firstString)
+        count += 1
+        continue  # if this was true, start the loop over
 
     # otherwise get the rest of the teams and do the damn lottery
-    
+
     secondSeed = League[len(League) - 2]
     secondString = "2- " + secondSeed[0] + ": " + str(secondSeed[1]) + "\n"
     ResultsLog.write(secondString)
-    print(secondString)
-    
+    # print(secondString)
+
     thirdSeed = League[len(League) - 3]
-    thirdString =  "3- " + thirdSeed[0] + ": " + str(thirdSeed[1]) + "\n"
+    thirdString = "3- " + thirdSeed[0] + ": " + str(thirdSeed[1]) + "\n"
     ResultsLog.write(thirdString)
-    print(thirdString)
-    
+    # print(thirdString)
+
     fourthSeed = League[len(League) - 4]
-    fourthString =  "4- " + fourthSeed[0] + ": " + str(fourthSeed[1]) + "\n"
+    fourthString = "4- " + fourthSeed[0] + ": " + str(fourthSeed[1]) + "\n"
     ResultsLog.write(fourthString)
-    print(fourthString)
+    # print(fourthString)
 
     # Put all the teams together in the pool
     LotteryPool = firstSeed, secondSeed, thirdSeed, fourthSeed
-    
+
     # Find winner
     winner = lotto.Lottery()
-    
+
     # Get the winning team
     winningSeed = LotteryPool[winner]
-    winningString =  "W- " + winningSeed[0] + ": " + str(winningSeed[1]) + "\n"
+    winningString = "W- " + winningSeed[0] + ": " + str(winningSeed[1]) + "\n"
     ResultsLog.write(winningString)
-    print(winningString)
+    # print(winningString)
 
     # Get the index of the winner in the League list (different list than the pool)
     index = League.index(winningSeed)
-    
+
     # Take the winner out of the League list, and put him in the Results list
     LotteryResults.append(League.pop(index))
-    
+
     count += 1
 
 # Three teams left
 while len(League) > 0:
-    
+
     # Take them out of the League list in order, put them in results
     header = "Round " + str(count) + "*\n"
     ResultsLog.write(header)
-    print(header)
-        
+    # print(header)
+
     team = League.pop()
     LotteryResults.append(team)
-    
+
     teamString = "L- " + team[0] + ": " + str(team[1]) + "\n"
     ResultsLog.write(teamString)
-    print(teamString)
-    
+    # print(teamString)
+
     count += 1
 
 count = 1
@@ -181,7 +186,7 @@ LotteryStandingsFile.write(header)
 
 for team in LotteryResults:
 
-    LotteryStandingsFile.write('{:<4}'.format("#" + (str(count))) + '| ' +  
+    LotteryStandingsFile.write('{:<4}'.format("#" + (str(count))) + '| ' +
                                '{:<20}'.format(str(team[0])) + "| "
                                '{:<5}'.format(str(team[1])) + "\n")
     count += 1
@@ -210,3 +215,5 @@ StandingsFile.close()
 ResultsLog.close()
 LotteryStandingsFile.close()
 LottoTestLog.close()
+
+displayResults.run()
