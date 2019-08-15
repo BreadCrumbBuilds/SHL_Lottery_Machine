@@ -5,12 +5,12 @@ RESULTS
           Team          Seed
 ---------------------------------------
 #1  | Rup and Gagan       | 1    
-#2  | Corbin and Kyle     | 3    
-#3  | Deepak              | 2    
+#2  | Deepak              | 2    
+#3  | Corbin and Kyle     | 3    
 #4  | Darcy               | 4    
 #5  | Blair               | 5    
-#6  | Brandon and Andrew  | 6    
-#7  | Skylar              | 8    
+#6  | Skylar              | 8    
+#7  | Brandon and Andrew  | 6    
 #8  | Darren              | 7    
 #9  | Dave                | 9    
 #10 | Cole and Randy      | 10   

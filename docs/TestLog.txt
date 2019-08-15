@@ -4,39 +4,39 @@ LOTTERY TESTING 1,000,000 DRAWs
 LOTTERY TEST
 Seed          Wins     Odds
 --------------------------------
-First:       500796  	%50.08
-Second:      249664  	%24.97
-Third:       149826  	%14.98
-Fourth:      99714   	%9.97 
+First:       499803  	%49.98
+Second:      250794  	%25.08
+Third:       149911  	%14.99
+Fourth:      99492   	%9.95 
 
 LOTTERY TEST
 Seed          Wins     Odds
 --------------------------------
-First:       500674  	%50.07
-Second:      249645  	%24.96
-Third:       149788  	%14.98
-Fourth:      99893   	%9.99 
+First:       499901  	%49.99
+Second:      249913  	%24.99
+Third:       150001  	%15.00
+Fourth:      100185  	%10.02
 
 LOTTERY TEST
 Seed          Wins     Odds
 --------------------------------
-First:       500172  	%50.02
-Second:      249474  	%24.95
-Third:       150545  	%15.05
-Fourth:      99809   	%9.98 
+First:       499048  	%49.90
+Second:      250178  	%25.02
+Third:       150283  	%15.03
+Fourth:      100491  	%10.05
 
 LOTTERY TEST
 Seed          Wins     Odds
 --------------------------------
-First:       499401  	%49.94
-Second:      250767  	%25.08
-Third:       149419  	%14.94
-Fourth:      100413  	%10.04
+First:       500139  	%50.01
+Second:      249957  	%25.00
+Third:       149900  	%14.99
+Fourth:      100004  	%10.00
 
 LOTTERY TEST
 Seed          Wins     Odds
 --------------------------------
-First:       500538  	%50.05
-Second:      249490  	%24.95
-Third:       150033  	%15.00
-Fourth:      99939   	%9.99 
+First:       499243  	%49.92
+Second:      250370  	%25.04
+Third:       150500  	%15.05
+Fourth:      99887   	%9.99 

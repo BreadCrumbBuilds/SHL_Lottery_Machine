@@ -9,13 +9,13 @@ Round 2*
 2- Corbin and Kyle: 3
 3- Darcy: 4
 4- Blair: 5
-W- Corbin and Kyle: 3
+W- Deepak: 2
 Round 3*
-1- Deepak: 2
+1- Corbin and Kyle: 3
 2- Darcy: 4
 3- Blair: 5
 4- Brandon and Andrew: 6
-W- Deepak: 2
+W- Corbin and Kyle: 3
 Round 4*
 1- Darcy: 4
 2- Blair: 5
@@ -33,13 +33,13 @@ Round 6*
 2- Darren: 7
 3- Skylar: 8
 4- Dave: 9
-W- Brandon and Andrew: 6
+W- Skylar: 8
 Round 7*
-1- Darren: 7
-2- Skylar: 8
+1- Brandon and Andrew: 6
+2- Darren: 7
 3- Dave: 9
 4- Cole and Randy: 10
-W- Skylar: 8
+W- Brandon and Andrew: 6
 Round 8*
 1- Darren: 7
 2- Dave: 9
