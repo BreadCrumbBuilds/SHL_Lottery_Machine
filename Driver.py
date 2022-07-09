@@ -51,7 +51,7 @@ LeagueCopy = League.copy() 		    # to be used when reading results back
 header = ("{0:^20}".format("Owner") + "{:<23}".format("Standing"))
 print("\n\n\nWelcome to the Selfish Hockey League Draft Lottery!!!")
 util.waitNoDot(3)
-print("\nThe Selfish Hockey League 2019 Standings")
+print("\nThe Selfish Hockey League 2022 Standings")
 util.waitNoDot(3)
 print("-----------------------------------------")
 util.waitNoDot(.5)
@@ -72,13 +72,13 @@ LottoTestLog.write("\nLOTTERY TESTING 1,000,000 DRAWs\n")
 
 # Do five tests of the lottery
 
-i = 0
-while i < 5:
-    string = lotto.LotteryTest(1000000)
-    LottoTestLog.write(string)
-    print(string)
-    util.waitNoDot(3)
-    i += 1
+# i = 0
+# while i < 5:
+#     string = lotto.LotteryTest(1000000)
+#     LottoTestLog.write(string)
+#     print(string)
+#     util.waitNoDot(3)
+#     i += 1
 
 # End of section 3
 
@@ -91,8 +91,8 @@ to be read in later
 count = 1
 
 # Do the lotto: 4 teams at a time, until there are 3 teams left
-while len(League) > 3:  # run until only three teams left
-
+for idx in range(len(League)):  # run until only three teams left
+    if len(League) < 4: break
     # Initialize temporary list to store each round of lottery
     LotteryPool = []
 
@@ -113,7 +113,8 @@ while len(League) > 3:  # run until only three teams left
     # so if the standing of team - 3 is ever larger than the amount of teams
     # remaining, that team has fallen the maximum four spots, so they
     # automatically win this round
-    if (int)(firstSeed[1] - 3) >= len(League):
+    print(f'seed {firstSeed[1]}, round {idx+1}, exception {(int)(firstSeed[1] + 3) <= idx+1}')
+    if (int)(firstSeed[1] + 3) <= idx+1:
         # take out the team and put it in the Winner
         LotteryResults.append(League.pop(len(League)-1))
         firstStringLost = "L- " + \
@@ -137,10 +138,10 @@ while len(League) > 3:  # run until only three teams left
     ResultsLog.write(fourthString)
 
     # Put all the teams together in the pool
-    LotteryPool = firstSeed, secondSeed, thirdSeed, fourthSeed
+    LotteryPool = [firstSeed, secondSeed, thirdSeed, fourthSeed]
 
     # Find winner
-    winner = lotto.Lottery()
+    winner = lotto.Draw()
 
     # Get the winning team
     winningSeed = LotteryPool[winner]

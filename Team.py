@@ -5,3 +5,6 @@ Created on Wed Jun 12 18:56:27 2019
 
 @author: BradleyCrump
 """
+
+class Team(object):
+    

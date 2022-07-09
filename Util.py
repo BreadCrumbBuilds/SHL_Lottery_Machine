@@ -22,7 +22,7 @@ def wait(time):
 def waitNoDot(time):
     timer = 0
     while timer < time:
-        t.sleep(1)
+        # t.sleep(1)
         timer += 1
 
 # not quite working
