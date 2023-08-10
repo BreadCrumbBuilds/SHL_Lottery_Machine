@@ -1,14 +1,14 @@
-Brad:                   14
-Kyle:                   13
-Tim:                    12
-Brock and Chel:         11
-Cole and Randy:         10
-Dave:                   9
-Skylar:                 8
-Darren:                 7
-Brandon and Andrew:     6
-Blair:                  5
-Darcy:                  4
-Corbin and Kyle:        3
-Deepak:                 2
-Rup and Gagan:          1
+Blair:                    1
+Brandon/Andrew:                   2
+Rup/Gagan (Randy):         3
+Cole/Randy:                4
+Dave:                   5
+Tim:         6
+Skylar:                   7
+Darcy:                 8
+Corbin:     9
+Brock/Chel:                  10
+Darren:                 11
+Brad:        12
+Sean:                 13
+Kyle:          14

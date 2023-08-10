@@ -72,13 +72,13 @@ LottoTestLog.write("\nLOTTERY TESTING 1,000,000 DRAWs\n")
 
 # Do five tests of the lottery
 
-# i = 0
-# while i < 5:
-#     string = lotto.LotteryTest(1000000)
-#     LottoTestLog.write(string)
-#     print(string)
-#     util.waitNoDot(3)
-#     i += 1
+i = 0
+while i < 5:
+    string = lotto.LotteryTest(1000000)
+    LottoTestLog.write(string)
+    print(string)
+    util.waitNoDot(3)
+    i += 1
 
 # End of section 3
 
